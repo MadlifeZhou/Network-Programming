@@ -1,0 +1,7 @@
+/Users/apple/CLionProjects/192050193_lab_1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/apple/CLionProjects/192050193_lab_1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/apple/CLionProjects/192050193_lab_1/cmake-build-debug/CMakeFiles/client.dir
+/Users/apple/CLionProjects/192050193_lab_1/cmake-build-debug/CMakeFiles/test.dir
+/Users/apple/CLionProjects/192050193_lab_1/cmake-build-debug/CMakeFiles/client2.dir
+/Users/apple/CLionProjects/192050193_lab_1/cmake-build-debug/CMakeFiles/multiThreadServer.dir
+/Users/apple/CLionProjects/192050193_lab_1/cmake-build-debug/CMakeFiles/server.dir

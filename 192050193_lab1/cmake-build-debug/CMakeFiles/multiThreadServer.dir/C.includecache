@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/apple/CLionProjects/192050193_lab_1/multiThreadServer.c
+stdio.h
+-
+stdlib.h
+-
+netdb.h
+-
+netinet/in.h
+-
+unistd.h
+-
+string.h
+-
+arpa/inet.h
+-
+pthread.h
+-
+time.h
+-
+
