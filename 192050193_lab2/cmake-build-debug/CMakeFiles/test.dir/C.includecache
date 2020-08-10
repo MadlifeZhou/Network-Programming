@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/apple/CLionProjects/192050193_lab2/test.c
+stdio.h
+-
+string.h
+-
+stdlib.h
+-
+sys/socket.h
+-
+arpa/inet.h
+-
+netinet/in.h
+-
+unistd.h
+-
+
