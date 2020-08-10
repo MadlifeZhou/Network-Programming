@@ -1,4 +1,0 @@
-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=/usr/local/Cellar/gcc/9.2.0_3/bin/gcc-9 -G "CodeBlocks - Unix Makefiles" /Users/apple/CLionProjects/192050193_lab2
--- Configuring done
--- Generating done
--- Build files have been written to: /Users/apple/CLionProjects/192050193_lab2/cmake-build-debug
