@@ -26,18 +26,10 @@
 
 <div class="alert alert-success" style="text-align: center;" role="alert"><strong>Comments are Here</strong></div>
 
-<div class="well well-lg">
-    <span class="label label-info" style="padding: 10px">user1</span>
-    <div style="margin: 20px 0px">
-        Hello world Hello worldHello worldHello worldHello worldHello worldHello worldHello worldHello world
-        Hello worldHello worldHello worldHello worldHello worldHello worldHello world
-        Hello worldHello worldHello worldHello worldHello worldHello world
-    </div>
-</div>
 
 <div id="comment">
     <div class="well well-lg" v-for="item in content">
-        <span class="label label-info" style="padding: 10px;">{{item.username}}</span>
+        <span class="label label-info" style="padding: 10px;" v-text="item.username"></span>
         <div style="margin: 20px 0px;font-size:15px;" v-text="item.comment"></div>
     </div>
 </div>
@@ -61,6 +53,49 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script src="client.js"></script>
+<script>
+    let em = new Vue({
+        el: "#comment",
+        data: {
+            content2: [
+                {"username": "zhou", "comment": "ITMO is a good University. It`s always my dream to study in ITMO"},
+                {"username": "zhou2", "comment": "HDU is a good University. It`s always my dream to study in HDU"}
+            ],
+            // 存放实验数据
+            content: []
+        },
+        mounted() {
+            axios.get("http://localhost:3000").then(response => {
+                this.content = response.data;
+                console.log(this.content)
+            });
+        }
+    });
+
+    let em2 = new Vue({
+        el: "#form",
+        data: {
+            username: "",
+            comment: ""
+        },
+        methods: {
+            send() {
+                if (this.username.length === 0 || this.comment.length === 0) {
+                    alert("Sorry.Your Input text is empty")
+                    return 0;
+                }
+
+                axios.post("http://localhost:3000/", {
+                    "username": this.username,
+                    "comment": this.comment
+                }).then((req, resp) => {
+                    console.log(`成功提交`)
+                    window.location.reload();
+                });
+                window.location.reload();
+            }
+        }
+    });
+</script>
 </body>
 </html>

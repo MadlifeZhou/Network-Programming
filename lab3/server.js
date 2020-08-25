@@ -1,46 +1,45 @@
-const express = require('express')
-const bodyParser = require('body-parser');
-const app = express();
-const querystring = require('querystring');
+var express = require('express');
+var app = express();
+const cors = require("cors")
+
 const port = 3000;
 
-// 创建 application/x-www-form-urlencoded 编码解析
-let urlencodedParser = bodyParser.urlencoded({extended: false})
-
-app.all('*', function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
-    res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
-    res.header("X-Powered-By",' 3.2.1')
-    res.header("Content-Type", "application/json;charset=utf-8");
-    next();
-});
+app.use(express.json());
+app.use(cors())
 
 let data = [
     {"username": "zhou", "comment": "ITMO is a good University. It`s always my dream to study in ITMO"},
     {"username": "zhou2", "comment": "HDU is a good University. It`s always my dream to study in HDU"}
-]
+];
 
 app.post('/', (request, response) => {
-
-    console.log(request.body)
-    response.end("hello")
-    response.send(data)
+    console.log(request.body);
+    let item = request.body;
+    data.push(item)
+    console.log(data);
+    response.status(201).send;
 });
 
+app.get('/index.html', function (req, res) {
+    res.sendFile( __dirname + "/" + "index.html" );
+})
+
+app.get('/process_get', function (req, res) {
+    // 输出 JSON 格式
+    var response = {
+        "first_name":req.query.first_name,
+        "last_name":req.query.last_name
+    };
+    console.log(response);
+    res.end(JSON.stringify(response));
+})
+
 app.get('/', (request, response) => {
-    response.setHeader("Access-Control-Allow-Origin", "*");
+    // response.setHeader("Access-Control-Allow-Origin", "*");
     response.send(data);
 });
 
-app.listen(port, (err) => {
-    if (err) {
-        return console.log('something bad happened', err)
-    }
-    console.log(`server is listening on ${port}`)
-});
-
-
-
-
-
+var server = app.listen(3000, function () {
+    var port = server.address().port
+    console.log(`Visit the index page: http://localhost:${port}/index.html`)
+})
