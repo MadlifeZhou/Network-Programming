@@ -1,4 +1,4 @@
-Your can check the previous lab at
+**Your can check the previous lab at**
 
 [Network Programming Lab2](https://github.com/MadlifeZhou/Network-Programming/tree/master/192050193_lab2)
 
