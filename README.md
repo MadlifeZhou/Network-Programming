@@ -1,3 +1,7 @@
+Your can check the previous lab at
+
+[Network Programming Lab2](https://github.com/MadlifeZhou/Network-Programming/tree/master/192050193_lab2)
+
 # Network-Programming lab3
 
 **Name**: Zhou Guancheng
